@@ -1,27 +1,27 @@
-// ButtonLayer.tjs - ボタンレイヤ
-// Copyright (C)2001-2004, W.Dee  改変・配布は自由です
+// ButtonLayer.tjs - button layer
+// Copyright (C)2001-2004, W.Dee ・ free to modify and distribute
 
 /*
-ボタンとして動作するレイヤです。
-押し込まれた時の画像、マウスカーソルがレイヤ内にあるときの画像、通常の画像
-をそれぞれ変えることができます。
+A layer that acts as a button.
+The image when pressed, when the mouse cursor is on the layer
+and the normal image can be changed respectively
 
-書式  new ButtonLayer(<window>, <parent>)
+Format  new ButtonLayer(<window>, <parent>)
 
-<window> : このレイヤを作成するウィンドウ
-<parent> : 親レイヤ
+<window> : the window in which to create this layer
+<parent> : parent layer
 
 */
 
 
 class ButtonLayer extends Layer
 {
-	var Butt_imageLoaded = false; // 画像が読み込まれたか
-	var Butt_mouseOn = false; // レイヤ内にマウスがあるか
-	var Butt_mouseDown = false; // マウスボタンが押されているか
+	var Butt_imageLoaded = false; // image loaded
+	var Butt_mouseOn = false; // is there a mouse on the layer
+	var Butt_mouseDown = false; // is the mouse button down
 	var Butt_color = clNone;
-	var Butt_caption = ''; // ボタンのキャプション
-	var Butt_captionColor = 0x000000; // キャプションの色
+	var Butt_caption = ''; // button caption
+	var Butt_captionColor = 0x000000; // caption color
 	var Butt_keyPressed = false;
 	var Butt_showFocusImage = false;
 	var Butt_onClickHandler = null;
@@ -35,7 +35,7 @@ class ButtonLayer extends Layer
 
 		hitType = htMask;
 		hitThreshold = 0;
-		focusable = true; // フォーカスを得られる
+		focusable = true; // can get focus
 	}
 
 	function finalize()
@@ -45,7 +45,7 @@ class ButtonLayer extends Layer
 
 	function assign(src)
 	{
-		// src の情報をこのボタンレイヤにコピー
+		// copy src information to this button layer
 		assignImages(src, true);
 		Butt_imageLoaded = src.Butt_imageLoaded;
 		Butt_color = src.Butt_color;
@@ -57,40 +57,40 @@ class ButtonLayer extends Layer
 
 	function drawState(s)
 	{
-		// 状態 s に対応する画像を描画
-		// s :  0 : 普通の状態
-		//      1 : ボタンが押された状態
-		//      2 : ボタンの上にマウスカーソルがある状態
-		//     (3): フォーカスがある場合
+		// draw the image corresponding to state s
+		// s :  0 : normal state
+		//      1 : button pressed
+		//      2 : state where the mouse cursor is over the button
+		//     (3): if it has focus
 		if(!enabled)
 		{
-			s = 0; // 無効状態
+			s = 0; // disabled state
 		}
 
 		if(Butt_imageLoaded)
 		{
-			// ボタンイメージが読み込まれている
+			// button image is loaded
 			// TODO: keyboard focus
 			imageLeft = -s * width;
 		}
 		else
 		{
-			if(Butt_keyPressed) s = 1; // 押されている
+			if(Butt_keyPressed) s = 1; // pressed
 
-			// 枠とキャプションを描画
-			// クリア
+			// clear drawing frame and 
+			// caption
 			face = dfAlpha;
 			colorRect(0, 0, width, height, 0, -255);
-			// 下地を塗る
+			// paint the base
 			if(Butt_color != clNone)
 				colorRect(0, 0, width, height, Butt_color, 128);
-			// 文字のサイズを得る
+			// get font size
 			var tw, th;
 			tw = font.getTextWidth(Butt_caption);
 			th = font.getTextHeight(Butt_caption);
 			if(s == 0 || s == 2)
 			{
-				// 通常あるいはマウスが上にある
+				// normal or mouse is over the button
 				colorRect(0, 0, width, 1, 0xffffff, 128);
 				colorRect(0, 1, 1, height-2, 0xffffff, 128);
 				colorRect(width-1, 1, 1, height-1, 0x000000, 128);
@@ -100,7 +100,7 @@ class ButtonLayer extends Layer
 			}
 			else
 			{
-				// 押されている
+				// button is being pressed
 				colorRect(0, 0, width, 1, 0x000000, 128);
 				colorRect(0, 1, 1, height-2, 0x000000, 128);
 				colorRect(width-1, 1, 1, height-1, 0xffffff, 128);
@@ -110,11 +110,11 @@ class ButtonLayer extends Layer
 			}
 
 			if(s != 0)
-				colorRect(2, 2, width-4, height-4, clHighlight, 64); // ハイライトする
+				colorRect(2, 2, width-4, height-4, clHighlight, 64); // highlight
 
 			if(focused)
 			{
-				// フォーカスがあるのでハイライトする
+				// highlight because it has focus
 				colorRect(2, 2, width-4, 1, clHighlight, 128);
 				colorRect(2, 3, 1, height-5, clHighlight, 128);
 				colorRect(3, height-3, width-5, 1, clHighlight, 128);
@@ -125,7 +125,7 @@ class ButtonLayer extends Layer
 
 	function loadImages(storage, key)
 	{
-		// 画像を読み込む
+		// loading Images
 		super.loadImages(storage, key);
 		super.width = imageWidth \ (Butt_showFocusImage ? 4 : 3);
 		super.height = imageHeight;
@@ -135,7 +135,7 @@ class ButtonLayer extends Layer
 
 	function discardImage()
 	{
-		// 画像を破棄し、文字ボタンレイヤとして動作するようにする
+		// Discard the image and make it act as a text button layer
 		Butt_imageLoaded = false;
 		imageLeft = imageTop = 0;
 		update();
@@ -143,7 +143,7 @@ class ButtonLayer extends Layer
 
 	function onMouseDown()
 	{
-		// onMouseDown イベントハンドラ
+		// onMouseDown event handler 
 		Butt_mouseDown = true;
 		focus();
 		update();
@@ -152,7 +152,7 @@ class ButtonLayer extends Layer
 
 	function onMouseUp()
 	{
-		// onMouseUp イベントハンドラ
+		// onMouseUp event handler
 		Butt_mouseDown = false;
 		update();
 		super.onMouseUp(...);
@@ -160,7 +160,7 @@ class ButtonLayer extends Layer
 
 	function onClick()
 	{
-		// onClick イベントハンドラ
+		// onClick event handler
 		super.onClick(...);
 		if(Butt_onClickHandler !== null)
 			Butt_onClickHandler();
@@ -168,7 +168,7 @@ class ButtonLayer extends Layer
 
 	function draw()
 	{
-		// 現在の状態にあわせて描画を行う
+		// drawing according to the current state 
 		if(Butt_mouseDown) drawState(1);
 		else if(Butt_mouseOn) drawState(2);
 		else if(Butt_showFocusImage && focused) drawState(3);
@@ -177,14 +177,14 @@ class ButtonLayer extends Layer
 
 	function onPaint()
 	{
-		// 描画の直前に呼ばれる
+		// called just before drawing 
 		super.onPaint(...);
 		draw();
 	}
 
 	function onMouseEnter()
 	{
-		// マウスがレイヤ領域内に入った
+		// the mouse is inside the layer area.
 		update();
 		Butt_mouseOn = true;
 		super.onMouseEnter(...);
@@ -192,7 +192,7 @@ class ButtonLayer extends Layer
 
 	function onMouseLeave()
 	{
-		// マウスがレイヤ領域から出ていった
+		// the mouse is outside the layer area.
 		update();
 		Butt_mouseOn = false;
 		Butt_mouseDown = false;
@@ -201,7 +201,7 @@ class ButtonLayer extends Layer
 
 	function onNodeDisabled()
 	{
-		// レイヤのノードが不可になった
+		// layer node is disabled
 		super.onNodeDisabled(...);
 		Butt_mouseDown = false;
 		update();
@@ -209,21 +209,21 @@ class ButtonLayer extends Layer
 
 	function onNodeEnabled()
 	{
-		// レイヤのノードが有効になった
+		// layer node is enabled
 		super.onNodeEnabled(...);
 		update();
 	}
 
 	function onFocus()
 	{
-		// フォーカスを得た
+		// gained focus
 		super.onFocus(...);
 		update();
 	}
 
 	function onBlur()
 	{
-		// フォーカスを失った
+		// lost focus
 		super.onBlur(...);
 		Butt_mouseDown = false;
 		update();
@@ -231,15 +231,15 @@ class ButtonLayer extends Layer
 
 	function onKeyDown(key, shift, process)
 	{
-		// キーが押された
+		// key is pressed 
 		if(process)
 		{
 			if(key == VK_RETURN || key == VK_SPACE)
 			{
-				// スペースキーまたはエンターキー
+				// Enter or Space key is pressed
 				Butt_keyPressed = true;
 				update();
-				super.onKeyDown(key, shift, false); // 処理をしたのでprocessにfalseを渡す
+				super.onKeyDown(key, shift, false); // pass false to process as it has been processed
 			}
 			else
 			{
@@ -248,24 +248,24 @@ class ButtonLayer extends Layer
 		}
 		else
 		{
-			// process が false の場合は処理は行わない
+			// If process is false, no processing is performed.
 			super.onKeyDown(...);
 		}
 	}
 
 	function onKeyUp(key, shift, process)
 	{
-		// キーが離された
+		// key is released
 		if(process)
 		{
 			if(key == VK_RETURN || key == VK_SPACE)
 			{
-				// スペースキーまたはエンターキー
+				// Enter or Space key is released
 				var flag = Butt_keyPressed;
 				Butt_keyPressed = false;
 				update();
 				super.onKeyUp(key, shift, false);
-				if(flag) onClick(width \ 2, height \ 2); // クリック動作
+				if(flag) onClick(width \ 2, height \ 2); // click event
 			}
 			else
 			{

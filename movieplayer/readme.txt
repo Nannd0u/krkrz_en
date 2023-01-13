@@ -1,42 +1,41 @@
 ---------------------------------------------------------------------------
-                         簡易ムービープレーヤ
+                         SIMPLE MOVIE PLAYER
 ---------------------------------------------------------------------------
 
-■ 目的
+■ PURPOSE
 
-　これは MPEG I / WMV / theora / H.264 ファイルを再生することができるプレーヤーです。
-H.264 は vomMFEVR モード (MediaFoundation) でのみ再生できます。
-theora は、vomMFEVR 以外のモードで再生できます。
-
-
-■ 使い方
-
-　tvpwin32.exe(tvpwin64.exe) を実行してください。
-　ウィンドウが開きます。
-
-　メニューから「ファイル>開く」か、「開」ボタンをクリックするか、あるいはムー
-ビーファイルをウィンドウにドロップすることで再生を開始できます。
-
-・「再」ボタンを押すと、再生を開始することができます。
-・「停」ボタンを押すと、再生を一時停止することができます。再び再生するには
-  「再」ボタンを押してください。
-・「止」ボタンを押すと、再生を停止し、最初に巻き戻す事ができます。
-・スライダーを操作すると、再生位置を変えることが出来ます。
-
-　レイヤを用いた再生を行うには、「再生>レイヤ再生」を選択してください。
-　レイヤ再生に切り替えると、現在再生中のファイルは閉じられますので、もう一度
-ファイルを指定してください。
-　レイヤ再生中は、レイヤで再生していることを示すために、右上に「レイヤでムー
-ビーを再生中」という表示が出ます (このようにムービーよりも手前に表示を行うこ
-とができるのが、レイヤによる再生の特徴です)。
+  This is a player that can play MPEG I / WMV / theora / H.264 files. 
+  H.264 can only be played in vomMFEVR mode (MediaFoundation). 
+  theora can play in modes other than vomMFEVR.
 
 
-■ 制限・注意点など
+■ HOW TO EXECUTE
 
-・AVI ファイルも再生できますが、サポート外となります。
+　Execute tvpwin32.exe (tvpwin64.exe).
+　A window will open.
+
+　You can start playback by clicking "File > Open" from the menu, 
+  clicking the "Open" button, or dropping the movie file into the window. 
+
+・ You can start playback by pressing the "Restart" button. 
+・ You can pause playback by pressing the "Stop" button.  
+   Press the "Replay" button to play again. 
+・ Press the "Stop" button to stop playback and rewind to the beginning. 
+・ By operating the slider, you can change the playback position. 
+
+  To play with layers, select Play > Layered Playback. 
+  If you switch to layer playback, the currently playing file will be closed, 
+  so specify the file again. 
+  During layer playback, the message "Playing movie on layer" appears in the upper 
+  right to indicate that it is playing on layers. layered playback feature).
 
 
-■ 連絡先
+■ RESTRICTIONS/PRECAUTIONS
+
+・AVI files can be played, but they are not supported.
+
+
+■ CONTACT
 
   http://krkrz.github.io/
   jin1016 <https://twitter.com/jin1016>

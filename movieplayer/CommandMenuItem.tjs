@@ -1,8 +1,8 @@
 /*
-	クリックされたときの動作をコンストラクタから指定できるメニューアイテム
-	コンストラクタの第３引数にメソッドを指定すると、クリック時に
-	そのメソッドを 引数１個 (メニューアイテムオブジェクトが渡される) で
-	呼び出すようになる
+	A menu item that can specify the behavior when clicked from the constructor 
+	If you specify a method as the third argument of the constructor, when you click 
+	Call that method with one argument (which is passed the menu item object) 
+	come to call 
 */
 
 

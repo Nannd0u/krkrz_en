@@ -1,5 +1,5 @@
 /*
-	超簡易ムービープレーヤのコントロール用レイヤ
+	Control Layer for super simple movie player 
 */
 
 class ControlLayer extends Layer
@@ -16,13 +16,13 @@ class ControlLayer extends Layer
 	{
 		super.Layer(win, par);
 
-		// プロパティを設定
+		// set properties
 		setImageSize(400, 20);
 		setSizeToImageSize();
-		name = "コントロール用レイヤ";
+		name = "Control Layer";
 		visible = true;
 
-		// 各ボタンなどを作成
+		// create each button etc. 
 		var l = 4;
 		const spacing = 4;
 
@@ -32,7 +32,7 @@ class ControlLayer extends Layer
 			.height = 16;
 			.left = l;
 			.top = 2;
-			.caption = .name = "開";
+			.caption = .name = "Open";
 			.onClickHandler = window.openFile;
 			.visible = true;
 			l += .width + spacing;
@@ -45,7 +45,7 @@ class ControlLayer extends Layer
 			.height = 16;
 			.left = l;
 			.top = 2;
-			.caption = .name = "再";
+			.caption = .name = "Play";
 			.onClickHandler = window.play;
 			.visible = true;
 			l += .width + spacing;
@@ -57,7 +57,7 @@ class ControlLayer extends Layer
 			.height = 16;
 			.left = l;
 			.top = 2;
-			.caption = .name = "停";
+			.caption = .name = "Pause";
 			.onClickHandler = window.pause;
 			.visible = true;
 			l += .width + spacing;
@@ -69,7 +69,7 @@ class ControlLayer extends Layer
 			.height = 16;
 			.left = l;
 			.top = 2;
-			.caption = .name = "止";
+			.caption = .name = "Stop";
 			.onClickHandler = window.stop;
 			.visible = true;
 			l += .width + spacing;
@@ -86,11 +86,11 @@ class ControlLayer extends Layer
 		}
 
 
-		// タイマを作成
+		// create timer
 		timer = new Timer(onTimer, '');
 		timer.interval = 100;
 
-		// ステータスを更新
+		// update status 
 		displayStatus();
 	}
 
@@ -107,7 +107,7 @@ class ControlLayer extends Layer
 
 	function displayStatus()
 	{
-		// ステータスを表示する
+		// display status
 		var st_x = 130;
 		var st_y = 4;
 
@@ -116,10 +116,10 @@ class ControlLayer extends Layer
 		var text;
 		switch(window.videoStatus)
 		{
-		case 'unload':		text = 'ムービーを開いてください';	break;
-		case 'play':		text = '再生中';					break;
-		case 'stop':		text = '停止中';					break;
-		case 'pause':		text = '一時停止中';				break;
+		case 'unload':		text = 'Please open the movie';		break;
+		case 'play':		text = 'Playing';					break;
+		case 'stop':		text = 'Stopping';					break;
+		case 'pause':		text = 'Temporarily stopped';		break;
 		}
 
 		slider.visible = window.videoStatus != 'unload';

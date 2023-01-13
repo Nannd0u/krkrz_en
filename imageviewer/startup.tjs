@@ -14,10 +14,10 @@ class MyWindow extends Window
 	function MyWindow()
 	{
 		super.Window();
-		menu.add(filemenu = new MenuItem(this, "ファイル(&F)"));
-		filemenu.add(exitmenu = new MenuItem(this, "終了(&X)"));
+		menu.add(filemenu = new MenuItem(this, "File(&F)"));
+		filemenu.add(exitmenu = new MenuItem(this, "Exit(&X)"));
 
-		// 下敷き(プライマリレイヤ)
+		// underlay (primary layer)
 		add(primlayer = new Layer(this, null));
 		primlayer.left = primlayer.top = 0;
 		primlayer.imageWidth = 400;
@@ -25,7 +25,7 @@ class MyWindow extends Window
 		primlayer.setSizeToImageSize();
 		setInnerSize(primlayer.width, primlayer.height);
 
-		// 画像
+		// image 
 		add(graphlayer = new Layer(this, primlayer));
 		graphlayer.width = primlayer.width;
 		graphlayer.height = primlayer.height;
@@ -33,12 +33,12 @@ class MyWindow extends Window
 		graphlayer.visible = true;
 		graphlayer.font.height = 18;
 //		graphlayer.face = dfMain;
-		graphlayer.drawText(10, 10, "Explorer 等から表示させたい画像を",
+		graphlayer.drawText(10, 10, "The image you want to display from Explorer, etc.",
 			0xff0000, 255, true, 200, 0x000000, 3, 2, 2);
-		graphlayer.drawText(10, 30, "ここにドロップしてください",
+		graphlayer.drawText(10, 30, "Drop here",
 			0xff0000, 255, true, 200, 0x000000, 3, 2, 2);
 
-		// 市松模様保存場所
+		// checkered pattern storage location 
 		add(checkers = new Layer(this, primlayer));
 		checkers.type = ltCoverRect;
 		checkers.face = dfMain;
@@ -55,7 +55,7 @@ class MyWindow extends Window
 
 	function loadImage(file)
 	{
-		// 画像読み込み
+		// load image 
 		try
 		{
 			var start = System.getTickCount();
@@ -79,12 +79,12 @@ class MyWindow extends Window
 		}
 		catch(e)
 		{
-			System.inform("画像を読み込むことができません : " + e.message);
+			System.inform("Unable to load image : " + e.message);
 		}
 		graphlayer.setSizeToImageSize();
 		setInnerSize(graphlayer.width, graphlayer.height);
 
-		// 市松模様描画
+		// checkerboard plot
 		primlayer.setImageSize(graphlayer.imageWidth, graphlayer.imageHeight);
 		primlayer.setSizeToImageSize();
 		for(var y = 0; y<primlayer.height; y += 320)

@@ -1,32 +1,31 @@
-‹g—¢‹g—¢Z/TJS2 ƒfƒoƒbƒK
+Kirikiri Z/TJS2 Debugger 
 
-œg‚¢•û
-krkrdebg.exe ‚ğ‹N“®‚µ‚Ü‚·B
-İ’èAƒvƒƒWƒFƒNƒg‚Ìİ’è‚ğ‘I‚Ñ‚Ü‚·B
-Àsƒtƒ@ƒCƒ‹ƒpƒX‚É“Y•t‚Ìtvpwin32_dbg.exe‚Ìƒtƒ‹ƒpƒX‚ğ
-ˆø”‚É -debug ‚ğ
-ƒvƒƒWƒFƒNƒgƒtƒHƒ‹ƒ_‚É data ‚Ìƒtƒ‹ƒpƒX‚ğ ( ex. C:\krkr\debugger\data )
-ì‹ÆƒtƒHƒ‹ƒ_‚ÉÀsƒfƒBƒŒƒNƒgƒŠ‚ğ ( ex. C:\krkr\debugger )
-ƒXƒNƒŠƒvƒgŠg’£q‚ÉƒXƒNƒŠƒvƒg‚ÌŠg’£q‚ğƒXƒy[ƒX‹æØ‚è‚Å ( ex. .tjs ) ("."‚à•K—v‚Å‚·)
-ˆÈã‚ğİ’è‚µ‚Ü‚·B
-TJS ƒtƒ@ƒCƒ‹‚ª¶‚É—ñ‹“‚³‚ê‚Ü‚·B
-ƒtƒ@ƒCƒ‹ ¨ –¼‘O‚ğ•t‚¯‚Ä•Û‘¶ ‚ÅAƒvƒƒWƒFƒNƒg‚ğ•Û‘¶‚µ‚Ä‚¨‚­‚ÆAŸ‰ñˆÈ~Šy‚Å‚·B
+â—How to use 
+Launch krkrdebg.exe. 
+Select Settings, Project Settings. 
+The full path of tvpwin32_dbg.exe attached to the execution file path 
+-debug in the argument 
+Full path of data in project folder ( ex. C:\krkr\debugger\data ) 
+Set the execution directory to the working folder ( ex. C:\krkr\debugger ) 
+Script extension is the script extension separated by a space ( ex. .tjs ) ("." is also required) 
+Set above. 
+TJS files are listed on the left. 
+If you save the project with File â†’ Save As, it will be easier next time. 
 
-“¯‚¶ƒfƒBƒŒƒNƒgƒŠ‚É debugger.sdp ‚ª‚ ‚Á‚½ê‡A‚»‚Ìİ’èƒtƒ@ƒCƒ‹‚ğƒfƒtƒHƒ‹ƒg‚Å“Ç‚İ‚İ‚Ü‚·
-ˆø”‚É -p filename.sdp ‚Æ‚µ‚Ä‹N“®‚µ‚½ê‡A‚»‚Ìİ’èƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ü‚·B
+If there is debugger.sdp in the same directory, load that configuration file by default 
+If invoked with -p filename.sdp as an argument, read that configuration file. 
 
-startup.tjs ‚Æ‚© Config.tjs ‚Æ‚©‚Í‚¶‚ß‚Ì•û‚ÉÀs‚³‚ê‚éƒtƒ@ƒCƒ‹‚ÌÀs•¶‚ª‚ ‚és‚ğƒ_ƒuƒ‹ƒNƒŠƒbƒN‚·‚é‚ÆƒuƒŒ[ƒNƒ|ƒCƒ“ƒg‚ª“\‚ç‚ê‚Ü‚·B
-( ‰½‚à‚È‚¢s‚É‚àƒuƒŒ[ƒNƒ|ƒCƒ“ƒg‚Í“\‚ê‚Ü‚·‚ª~‚Ü‚è‚Ü‚¹‚ñ )
+If you double-click the line with the execution statement of the file that is executed toward the beginning, such as startup.tjs or Config.tjs, a breakpoint will be pasted. 
+(Breakpoints can be pasted on empty lines, but they do not stop.) 
 
-Œã‚ÍAÀs‚·‚é‚ÆƒuƒŒ[ƒNƒ|ƒCƒ“ƒg‚Å~‚Ü‚è‚Ü‚·B
-ƒgƒŒ[ƒX‚âƒXƒeƒbƒv‚ÅÀsŒp‘±‚Å‚«‚Ü‚·B
+Then run it and it will stop at the breakpoint. 
+You can continue execution by tracing or stepping. 
 
-Às’†‚ÉƒuƒŒ[ƒNƒ|ƒCƒ“ƒg‚ğİ’è‚µ‚Ä‚àA‘¦À‚É‚Í”½‰f‚³‚ê‚Ü‚¹‚ñB
-ƒuƒŒ[ƒN(ˆê’â~)‚Å~‚ß‚ÄAÄ“xÀs‚·‚é‚Æ”½‰f‚³‚ê‚Ü‚·B
+Setting breakpoints during execution does not take effect immediately. 
+Stop with a break (pause) and execute again to reflect. 
 
-İ’èƒtƒ@ƒCƒ‹‚É‚ÍAŠeíƒpƒX‚Í‘Š‘ÎƒpƒX‚Å•Û‘¶‚³‚ê‚Ü‚·B
+Various paths are saved in the configuration file as relative paths. 
 
 
-yXV—š—ğz
-2015/08/17 1.0.1.1 •\¦‚Å‚«‚È‚¢•¶š‚Í¬‚Ö’u‚«Š·‚¦AUTF-8 ‚Å•¶š•\¦o—ˆ‚È‚¢•s‹ï‡C³B
-
+ã€Change logã€‘ 
+2015/08/17 1.0.1.1 Replaced characters that cannot be displayed with ã€“, and fixed the problem that characters cannot be displayed in UTF-8.

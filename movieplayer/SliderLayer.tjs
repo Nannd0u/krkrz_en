@@ -1,22 +1,22 @@
-// SliderLayer.tjs - スライダーレイヤ
-// Copyright (C)2001-2003, W.Dee  改変・配布は自由です
+// SliderLayer.tjs - slider layer
+// Copyright (C)2001-2003, W.Dee ・ free to modify and distribute
 
 class SliderLayer extends Layer
 {
-	var Slider_min = 0; // 最小値
-	var Slider_max = 0; // 最大値
-	var Slider_position = 0; // 位置
-	var Slider_tabWidth = 10; // つまみサイズ
-	var Slider_dragging = false; // ドラッグ中かどうか
-	var Slider_dragOriginX; // ドラッグ開始 X 位置
-	var Slider_mouseOn = false; // マウスが領域内にあるかどうか
-	var Slider_onChangeHandler = null; // 位置が変更された時に呼ばれるハンドラ
+	var Slider_min = 0; // minimum value
+	var Slider_max = 0; // maximum value 
+	var Slider_position = 0; // position
+	var Slider_tabWidth = 10; // tab size
+	var Slider_dragging = false; // whether it's being dragged
+	var Slider_dragOriginX; // drag start x position
+	var Slider_mouseOn = false; // whether the mouse is within the region
+	var Slider_onChangeHandler = null; // handler called when the position is changed
 
 	function SliderLayer(win, par)
 	{
 		super.Layer(win, par);
 
-		focusable = true; // フォーカスを得られる
+		focusable = true; // can get focus
 
 		hitType = htMask;
 		hitThreshold = 0;
@@ -29,7 +29,7 @@ class SliderLayer extends Layer
 
 	function assign(src)
 	{
-		// src の情報をこのオブジェクトにコピー
+		// copy src information to this object
 		Slider_min = src.Slider_min;
 		Slider_max = src.Slider_max;
 		Slider_position = src.Slider_position;
@@ -37,28 +37,28 @@ class SliderLayer extends Layer
 
 	function onPaint()
 	{
-		// onPaint イベント
-		// レイヤの内容を描画する
+		// onPaint event
+		// draw the contents of the layer
 		super.onPaint(...);
 
-		// よく使う値をローカル変数に用意する
+		// prepare frequently used values in local variables
 		var imw = imageWidth, imh = imageHeight;
 		var tabw = Slider_tabWidth;
 		var htabw = tabw >> 1;
 
-		// 下敷きを塗る
+		// apply underlay
 		fillRect(0, 0, imw, imh, 0);
 
 		if(focused)
 		{
-			// フォーカスがあるのでハイライトする
+			// highlight with focus
 			colorRect(0, 0, width-1, 1, clHighlight, 128);
 			colorRect(0, 1, 1, height-2, clHighlight, 128);
 			colorRect(0, height-1, width, 1, clHighlight, 128);
 			colorRect(width-1, 0, 1, height-1, clHighlight, 128);
 		}
 
-		// 中央のへこみ線
+		// center dent line
 		{
 			var himh = imh >> 1;
 			var right = imw - tabw;
@@ -66,7 +66,7 @@ class SliderLayer extends Layer
 			fillRect(htabw, himh    , right, 1, 0x80ffffff);
 		}
 
-		// タブ
+		// tab
 		var pos_x = int(
 			(Slider_position-Slider_min) * (imw - tabw - 2)/(Slider_max - Slider_min)) +
 			htabw + 1;
@@ -85,26 +85,26 @@ class SliderLayer extends Layer
 
 	function onKeyDown(key, shift, process)
 	{
-		// キーが押された
+		// key pressed
 		if(process)
 		{
 			if(key == VK_LEFT)
 			{
-				// 左
+				// left
 				if(shift & ssAlt)
 					position = Slider_position - 1;
 				else
 					position = Slider_position - int((Slider_max - Slider_min)/ (Slider_tabWidth-2) / 2);
-				super.onKeyDown(key, shift, false); // 処理をしたのでprocessにfalseを渡す
+				super.onKeyDown(key, shift, false); // pass false to process because it has been processed
 			}
 			else if(key == VK_RIGHT)
 			{
-				// 左
+				// right
 				if(shift & ssAlt)
 					position = Slider_position + 1;
 				else
 					position = Slider_position + int((Slider_max - Slider_min)/ (Slider_tabWidth-2) / 2);
-				super.onKeyDown(key, shift, false); // 処理をしたのでprocessにfalseを渡す
+				super.onKeyDown(key, shift, false); // pass false to process because it has been processed
 			}
 			else
 			{
@@ -113,14 +113,14 @@ class SliderLayer extends Layer
 		}
 		else
 		{
-			// process が false の場合は処理は行わない
+			// do nothing if process is false
 			super.onKeyDown(...);
 		}
 	}
 
 	function onMouseDown(x, y, button)
 	{
-		// マウスボタンが押された
+		// mouse button pressed
 		focus();
 
 		super.onMouseDown(...);
@@ -132,18 +132,18 @@ class SliderLayer extends Layer
 			htabw + 1;
 		if(pos_x - htabw > x)
 		{
-			// タブより左
+			// left of tab
 			position = Slider_position - int((Slider_max - Slider_min)/ (tabw-2));
 		}
 		else if(pos_x + htabw < x)
 		{
-			// タブより右
+			// right of tab
 			position = Slider_position + int((Slider_max - Slider_min)/ (tabw-2));
 		}
 		else
 		{
-			// タブ
-			// タブのドラッグを開始
+			// tab
+			// start dragging the tab
 			Slider_dragging = true;
 			Slider_dragOriginX = x - pos_x;
 		}
@@ -151,7 +151,7 @@ class SliderLayer extends Layer
 
 	function onMouseUp(x, y, button)
 	{
-		// マウスボタンが離された
+		// mouse button released
 		super.onMouseUp(...);
 
 		Slider_dragging = false;
@@ -159,12 +159,12 @@ class SliderLayer extends Layer
 
 	function onMouseMove(x, y)
 	{
-		// マウスが移動した
+		// mouse moved
 		super.onMouseMove(...);
 
 		if(Slider_dragging)
 		{
-			// タブをドラッグ
+			// drag tab
 			position = int(
 				(x - Slider_dragOriginX - (Slider_tabWidth >> 1)) * (Slider_max - Slider_min) /
 				(imageWidth - Slider_tabWidth - 2) + Slider_min);
@@ -173,7 +173,7 @@ class SliderLayer extends Layer
 
 	function onMouseEnter()
 	{
-		// マウスがレイヤ領域内に入った
+		// mouse has entered the layer area
 		update();
 		Slider_mouseOn = true;
 		super.onMouseEnter(...);
@@ -181,7 +181,7 @@ class SliderLayer extends Layer
 
 	function onMouseLeave()
 	{
-		// マウスがレイヤ領域から出ていった
+		// mouse has left the layer area
 		update();
 		Slider_mouseOn = false;
 		Slider_dragging = false;
@@ -190,28 +190,28 @@ class SliderLayer extends Layer
 
 	function onFocus()
 	{
-		// フォーカスを得た
+		// got focus
 		super.onFocus(...);
 		update();
 	}
 
 	function onBlur()
 	{
-		// フォーカスを失った
+		// lost focus
 		super.onBlur(...);
 		update();
 	}
 
 	function onNodeDisabled()
 	{
-		// レイヤのノードが不可になった
+		// layer node disabled
 		super.onNodeDisabled(...);
 		update();
 	}
 
 	function onNodeEnabled()
 	{
-		// レイヤのノードが有効になった
+		// layer node is enabled
 		super.onNodeEnabled(...);
 		update();
 	}
@@ -289,7 +289,7 @@ class SliderLayer extends Layer
 
 	function setPos(x)
 	{
-		// 現在位置を設定するがイベントは発生させない
+		// set the current position but don't raise the event
 		if(x < Slider_min) x = Slider_min;
 		if(x > Slider_max) x = Slider_max;
 		Slider_position = x;

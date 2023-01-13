@@ -1,86 +1,82 @@
-‹g—¢‹g—¢Z 1.4.0
+Kirikiri Z 1.4.0 
 
 
-y‹g—¢‹g—¢Z‚É‚Â‚¢‚Äz
-‹g—¢‹g—¢Z‚Í2DƒQ[ƒ€‚âƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ğì‚é‚±‚Æ‚Ì‚Å‚«‚éŠJ”­/ÀsŠÂ‹«‚Å‚·B
+  ã€About Kirikiri Zã€‘ 
+  Kirikiri Z is a development/execution environment for creating 2D games and applications. 
 
 
-yƒ_ƒEƒ“ƒ[ƒhƒy[ƒWz
-http://krkrz.github.io/
+  ã€download pageã€‘ 
+  http://krkrz.github.io/ 
 
 
-yƒwƒ‹ƒvz
-Ú×‚ÈƒhƒLƒ…ƒƒ“ƒg‚É‚Â‚¢‚Ä‚ÍAã‹Lƒy[ƒW‚ÌŠeíƒIƒ“ƒ‰ƒCƒ“ƒwƒ‹ƒv‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
-Šeíƒwƒ‹ƒv‚ÍˆÈ‰º‚Ìƒy[ƒW‚É‚È‚è‚Ü‚·B
+  ã€helpã€‘ 
+  For detailed documentation, please refer to the various online help on the above page. 
+  Help is provided on the following pages. 
 
-‹g—¢‹g—¢ZƒŠƒtƒ@ƒŒƒ“ƒX
-http://krkrz.github.io/docs/kirikiriz/j/contents/index.html
+  Kirikiri Z Reference  http://krkrz.github.io/docs/kirikiriz/j/contents/index.html 
 
-TJS2 ƒŠƒtƒ@ƒŒƒ“ƒX
-http://krkrz.github.io/docs/tjs2/j/contents/index.html
+  TJS2 reference  http://krkrz.github.io/docs/tjs2/j/contents/index.html 
 
-‹g—¢‹g—¢Z‚Å‚Ì‹g—¢‹g—¢2‚©‚ç‚Ì•ÏX“_ˆê——
-http://krkrz.github.io/updatefromkr2.html
+  List of changes in Kirikiri Z from Kirikiri 2  http://krkrz.github.io/updatefromkr2.html 
 
-ƒŠƒŠ[ƒT[“™‚Ìƒc[ƒ‹‚Í‹g—¢‹g—¢2‚Ì‚à‚Ì‚ğg—p‚µ‚Ä‚­‚¾‚³‚¢BˆÈ‰º‚©‚çƒ_ƒEƒ“ƒ[ƒh‚Å‚«‚Ü‚·B
-http://krkrz.github.io/download/kr2_232r2.zip
+  Please use tools such as releasers from Kirikiri 2.  You can download it from below. 
+  http://krkrz.github.io/download/kr2_232r2.zip 
 
 
-yƒmƒxƒ‹ƒQ[ƒ€‚ğì‚é‚É‚Íz
-http://krkrz.github.io/ ‚©‚çuKAG for ‹g—¢‹g—¢Zv‚ğƒ_ƒEƒ“ƒ[ƒh‚µ‚ÄA“WŠJ‚µ‚½’†‚É‚ ‚é data ƒtƒHƒ‹ƒ_‚ğ tvpwin32/tvpwin64.exe ‚Æ“¯‚¶ƒtƒHƒ‹ƒ_‚É’u‚«‚Ü‚·B
-KAG3 ‚Ìg‚¢•û‚ÍAˆÈ‰º‚Ìƒy[ƒW‚É‚ ‚è‚Ü‚·B
-https://krkrz.github.io/krkr2doc/kag3doc/contents/index.html
-KAG3 ‚ÉƒZ[ƒuƒ[ƒh‰æ–Ê‚âƒRƒ“ƒtƒBƒO‰æ–Ê‚È‚Ç‚Ù‰Á‚¦‚½uéå“ü‚èKAG3 for ‹g—¢‹g—¢Zv‚à‚ ‚è‚Ü‚·B
-‚±‚¿‚ç‚Ì•û‚ªÅ‰‚ÍèŒy‚©‚à‚µ‚ê‚Ü‚¹‚ñB
-Šî–{“I‚Èg‚¢•û‚Í“¯‚¶‚Å‚·B
+  ã€How to make a novel gameã€‘
+  Download "KAG for Kirikiri Z" from http://krkrz.github.io/  and place the extracted data folder in the same folder as his tvpwin32 / tvpwin64.exe. 
+  How to use KAG3 is on the following page. 
+  https://krkrz.github.io/krkr2doc/kag3doc/contents/index.html 
+  There is also "KAG3 with conger eel for Kirikiri Z", which has a save/load screen and a configuration screen added to KAG3. 
+  This may be easier at first. 
+  Basic usage is the same. 
 
 
-yƒtƒ@ƒCƒ‹z
-\imageviewer        : ŠÈˆÕ“I‚ÈƒCƒ[ƒWƒrƒ…[ƒA‚Å‚·Btvpwin32/tvpwin64.exe ‚É‚±‚ÌƒtƒHƒ‹ƒ_‚ğ D&D ‚·‚é‚Æ‹N“®‚Å‚«‚Ü‚·B
-\movieplayer        : ŠÈˆÕ“I‚È“®‰æƒvƒŒƒCƒ„[‚Å‚·Btvpwin32/tvpwin64.exe ‚É‚±‚ÌƒtƒHƒ‹ƒ_‚ğ D&D ‚·‚é‚Æ‹N“®‚Å‚«‚Ü‚·B
-\plugin             : Šeíƒvƒ‰ƒOƒCƒ“‚ª“ü‚Á‚Ä‚¢‚Ü‚·B
-\plugin64           : Šeíƒvƒ‰ƒOƒCƒ“‚Ì64bit”Å‚ª“ü‚Á‚Ä‚¢‚Ü‚·B
-debugger.sdp        : ƒfƒoƒbƒK‚Ìİ’èƒtƒ@ƒCƒ‹‚Å‚·B
-krkrdebg.exe        : ƒfƒoƒbƒK–{‘Ì‚Å‚·B
-krkrdegb_readme.txt : ƒfƒoƒbƒK‚Ìà–¾‚Å‚·B
-license.txt         : ƒ‰ƒCƒZƒ“ƒX•¶‚ª‹Lq‚³‚ê‚½ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚Å‚·B
-readme.txt          : –{ƒtƒ@ƒCƒ‹‚Å‚·BŠÈ’P‚Èà–¾‚ğ‹LÚ‚µ‚Ä‚¢‚Ü‚·B
-tvpwin32.exe        : ‹g—¢‹g—¢Z–{‘Ì‚Å‚·B
-tvpwin32_dbg.exe    : ƒfƒoƒbƒK‹@”\‚ğ—LŒø‰»‚µ‚Äƒrƒ‹ƒh‚µ‚½‹g—¢‹g—¢Z–{‘Ì‚Å‚·B
-tvpwin64.exe        : ‹g—¢‹g—¢Z–{‘Ì‚Ì64bit”Å‚Å‚·B
+  ã€Fileã€‘ 
+  \imageviewer : Simple image viewer.   D&D this folder to tvpwin32/tvpwin64.exe to start. 
+  \movieplayer : A simple video player.   D&D this folder to tvpwin32/tvpwin64.exe to start. 
+  \plugin : Contains various plugins. 
+  \plugin64 : 64bit versions of various plugins are included. 
+  debugger.sdp : Debugger configuration file. 
+  krkrdebg.exe : Debugger itself. 
+  krkrdegb_readme.txt : Debugger description. 
+  license.txt : A text file containing the license text. 
+  readme.txt : This file.  A brief description is provided. 
+  tvpwin32.exe : Kirikiri Z body. 
+  tvpwin32_dbg.exe : Kirikiri Z built with the debugger enabled. 
+  tvpwin64.exe : 64bit version of Kirikiri Z. 
 
 
-y‹g—¢‹g—¢2 ‚Ì TJS2ƒXƒNƒŠƒvƒg‚Ì“®ì‚É‚Â‚¢‚Äz
-‹g—¢‹g—¢Z ‚Í‹g—¢‹g—¢2 ‚ÆŠ®‘SŒİŠ·‚Å‚Í‚È‚¢‚½‚ßA‹g—¢‹g—¢2 ‚Ì TJS2ƒXƒNƒŠƒvƒg‚ğ“®‚©‚·‚É‚Í‚¢‚­‚Â‚©•ÏX‚ª•K—v‚Å‚·B
+  [About the operation of his TJS2 script in Kirikiri 2] 
+  Kirikiri Z is not fully compatible with Kirikiri 2, so some changes are required to make his TJS2 script work for Kirikiri 2. 
 
-‹g—¢‹g—¢Z ‚Å‚Í•W€‚Ì•¶šƒR[ƒh‚ªUTF-8‚É•ÏX‚³‚ê‚Ä‚¢‚Ü‚·B
-‹ŒƒXƒNƒŠƒvƒg‚ğ‚»‚Ì‚Ü‚Ü“®‚©‚·ê‡‚ÍAƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Å -readencoding=Shift_JIS ‚Ì’Ç‰Á‚ª•K—v‚Å‚·B
+  In Kirikiri Z, the standard character code has been changed to UTF-8. 
+  If you want to run the old script as it is, you need to add -readencoding=Shift_JIS on the command line. 
 
-‘g‚İ‚İ‹@”\‚Å‚ ‚Á‚½ KAGParser ‚Æƒƒjƒ…[‚Íƒvƒ‰ƒOƒCƒ“‰»‚³‚ê‚Ä‚¢‚Ü‚·B
-KAGParser ‚Æƒƒjƒ…[ƒNƒ‰ƒX‚ª•K—v‚Å‚ ‚ê‚Î KAGParser.dll ‚Æ menu.dll ‚ğƒŠƒ“ƒN‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
+  His KAGParser and menus, which were built-in features, are now plug-ins. 
+  If you need KAGParser and menu classes, you need to link KAGParser.dll and menu.dll. 
 
-ƒ}ƒ‹ƒ`ƒ^ƒbƒ`‚ğƒTƒ|[ƒg‚·‚éƒfƒoƒCƒX‚ª—LŒø‚È’[––‚Å‚Íƒ^ƒbƒ`‚ª—LŒø‚É‚È‚è‚Ü‚·B
-( onMouseDown ‚Å‚Í‚È‚­ onTouchDown ‚ª“Í‚­‚ÆŒ¾‚¤‚æ‚¤‚È“®ì‚Æ‚È‚é )
-ƒ^ƒbƒ`ˆ—‚ğs‚í‚È‚¢ê‡‚ÍA]—ˆ‚Ìƒ}ƒEƒXˆ—‚Åƒnƒ“ƒhƒŠƒ“ƒOo—ˆ‚é‚æ‚¤‚É–³Œø‰»‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
-–³Œø‰»‚·‚é‚É‚Í Window.enableTouch ‚ğ false ‚É‚µ‚Ü‚·B
+  Touch is enabled on devices with multi-touch support enabled devices. 
+  (It works like onTouchDown arrives instead of onMouseDown ) 
+  If touch processing is not used, it must be disabled so that it can be handled with conventional mouse processing. 
+  Set Window.enableTouch to false to disable it. 
 
-PassThroughDrawDevice ‚Ííœ‚³‚ê‚Ä‚¢‚é‚Ì‚ÅAg—p‚µ‚Ä‚¢‚é‰ÓŠ‚Í‘‚«Š·‚¦‚ª•K—v‚Å‚·B
+  PassThroughDrawDevice has been removed, so you'll need to rewrite where it's used. 
 
-‚»‚Ì‘¼íœ‚³‚ê‚½ƒƒ\ƒbƒh“™‚ğg—p‚µ‚Ä‚¢‚éê‡‚ÍA‚»‚ê‚ç‚Ìˆ—‚ğ‘‚«Š·‚¦‚é•K—v‚ª‚ ‚è‚Ü‚·B
+  If you are using other deleted methods, etc., you will need to rewrite those processes. 
 
-‚æ‚èÚ×‚È•ÏX“_‚É‚Â‚¢‚Ä‚Íã‹Lu‹g—¢‹g—¢Z‚Å‚Ì‹g—¢‹g—¢2‚©‚ç‚Ì•ÏX“_ˆê——vƒy[ƒW‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+  For more detailed changes, please refer to the above "List of changes from Kirikiri Z in Kirikiri 2" page. 
 
 
-yXV—š—ğz
-2017/12/25 1.4.0.8
-2016/08/10 1.3.3.7
-2016/08/01 1.3.2.6
-2016/06/03 1.3.1.5
-2016/05/31 1.3.0.4
-2015/08/17 1.2.0.3
-2014/08/03 1.1.0.2
-2013/12/31 1.0.0.1 ƒŠƒŠ[ƒX
+  ã€Change logã€‘ 
+  2017/12/25 1.4.0.8 
+  2016/08/10 1.3.3.7 
+  2016/08/01 1.3.2.6 
+  2016/06/03 1.3.1.5 
+  2016/05/31 1.3.0.4 
+  2015/08/17 1.2.0.3 
+  2014/08/03 1.1.0.2 
+  2013/12/31 1.0.0.1 See the history page for release details. 
+ http://krkrz.github.io/olderversions.html 
 
-Ú×‚Í—š—ğƒy[ƒWQÆ‚µ‚Ä‚­‚¾‚³‚¢B
-http://krkrz.github.io/olderversions.html
-
+ 
